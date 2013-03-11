@@ -5,6 +5,7 @@
       (+ (square (if (> a b) a b))
          (square c))
       (+ (square a) (square b))))
+
 (= (sum-of-square-of-biggest 3 2 3) 18)
 (= (sum-of-square-of-biggest 1 2 3) 13)
 (= (sum-of-square-of-biggest 3 2 1) 13)
