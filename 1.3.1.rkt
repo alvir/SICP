@@ -1,9 +1,10 @@
 #lang racket
 (define (sum-of-square-of-biggest a b c)
-  (if (or (< a c) (< b c))
-      (+ (if (> a b) (* a a) (* b b)) 
-         (* c c))
-      (+ (* a a) (* b b))))
+  (if (> a c)
+      (+ (if (> b c) (* b b) (* c c))
+         (* a a))
+      (+ (if (> b a) (* b b) (* a a))
+         (* c c))))
 
 (= (sum-of-square-of-biggest 3 2 3) 18)
 (= (sum-of-square-of-biggest 1 2 3) 13)
