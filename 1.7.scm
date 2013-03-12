@@ -1,3 +1,4 @@
+#lang scheme
 (define (square x) (* x x))
 (define (improve guess x) 
   (average guess 
@@ -5,10 +6,16 @@
 (define (average x y)
   (/ (+ x y) 2))
 (define (good-enough? guess1 guess2)
-  (< (abs (- guess1 guess2)) 0.001))
+  (< (abs (- guess1 guess2)) 0.0001))
 (define (sqrt-iter guess x)
   (if (good-enough? guess (improve guess x))
       (improve guess x)
       (sqrt-iter (improve guess x) x)))
 (define (sqrt x)
   (sqrt-iter 1.0 x))
+(sqrt 30000000000)
+(sqrt 1)
+(sqrt 4)
+(sqrt 0.000004)
+(sqrt 0.0)
+(sqrt -0.0)
